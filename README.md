@@ -1,7 +1,7 @@
 myBlog
 ======
 
-A SPA Blog App
+A SPA Blog App. A step by step project that accompanies a workshop for creating a modern fullstack web application. 
 
 
 Tags
