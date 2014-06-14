@@ -9,12 +9,13 @@
  * http://stackoverflow.com/questions/7268033/basic-static-file-server-in-nodejs
  */
 var express = require('express'),
-        app = express();
-
-app.use(express.static(__dirname + '/public'));
+        app = express(),
+		staticDir= (process.env.NODE_ENV || "development") === "production" ? "dist" : "public";
+		
+app.use(express.static(__dirname + '/' + staticDir));
 
 app.get('*', function (req, res) {
-	res.sendfile(__dirname + '/public/index.html');
+	res.sendfile(__dirname + '/' + staticDir + '/index.html');
 });
 
 var server = app.listen(process.env.PORT || 8088, function() {
