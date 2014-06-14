@@ -3,7 +3,7 @@ The Secrets Of The Full Stack Ninja - Part A - The Client Side
 
 A SPA Blog App. A step by step project that accompanies a workshop for creating a modern fullstack web application. 
 
-![Alt text](https://github.com/hamecoded/myBlog/misc/oded.jpg "Oded Sagir")
+![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/misc/oded.jpg "Oded Sagir")
 
 Tags
 -------------------------------------------------------------------------------
