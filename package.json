@@ -1,0 +1,26 @@
+{
+  "name": "myBlog",
+  "version": "0.0.0",
+  "description": "A Blog App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hamecoded/myBlog.git"
+  },
+  "keywords": [
+    "blog",
+    "spa"
+  ],
+  "author": "Oded Sagir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hamecoded/myBlog/issues"
+  },
+  "homepage": "https://github.com/hamecoded/myBlog",
+  "dependencies": {
+    "express": "^4.4.3"
+  }
+}
