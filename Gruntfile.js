@@ -4,14 +4,12 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     // Metadata.
-    meta: {
-      version: '0.1.0'
-    },
-    banner: '/*! PROJECT_NAME - v<%= meta.version %> - ' +
+    pkg: grunt.file.readJSON('package.json'),
+    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '* http://PROJECT_WEBSITE/\n' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> ' +
-      'YOUR_NAME; Licensed MIT */\n',
+      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
+      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
+      ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
     concat: {
       options: {
@@ -19,8 +17,8 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['lib/FILE_NAME.js'],
-        dest: 'dist/FILE_NAME.js'
+        src: ['lib/<%= pkg.name %>.js'],
+        dest: 'dist/<%= pkg.name %>.js'
       }
     },
     uglify: {
@@ -29,7 +27,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/FILE_NAME.min.js'
+        dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
     jshint: {

@@ -67,6 +67,8 @@ $ npm install -g npm-check-updates
 $ npm-check-updates -u
 $ npm install 
 ````
+![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/misc/img/npm-update.png "Updates package.json modules to latest versions")
+
 Though you have [jsHint] set for your project it's best you also install the global package to give you cli interface for validating your JavaScript files.
 
 You can find a default .jshintrc file [here]
