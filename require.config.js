@@ -22,7 +22,7 @@ define({
         "collections": "/js/collections",
         "routers": "/js/routers",
         "views": "/js/views",
-        "templates": "/templates",
+        "templates": "/templates"
     },
     shim:{
         "underscore":{
