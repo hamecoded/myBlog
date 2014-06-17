@@ -19,14 +19,22 @@ module.exports = function (grunt) {
                 '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;' +
                 ' Licensed <%= pkg.license %> */\n',
 
-        path : {
-            raw : "tmp/<%= pkg.name %>.js",
-            replaced:  "tmp/replaced/<%= pkg.name %>.js",
-            minJS : "dist/js/<%= pkg.name %>.min.js",
-            minCSS : "dist/css/<%= pkg.name %>.min.css"
+        // Tasks
+        clean: {
+            options:{
+                force: true
+            },
+            dist: ["dist", "tmp"],
+            tmp: ["tmp"],
+            all: [
+                "tmp",
+                "dist",
+                ".sass-cache",
+                "node_modules",
+                "public/bower_components"
+            ]
         },
 
-        // Tasks
         watch: {
             compass: {
                 files: ['public/scss/*.{scss,sass}'],
@@ -38,7 +46,7 @@ module.exports = function (grunt) {
             }
         },
 
-       compass: {                  
+       compass: {  
             dist: {                  
               options: {              
                 sassDir: 'public/scss',
@@ -61,7 +69,7 @@ module.exports = function (grunt) {
               stripBanners: true
             },
             files: {
-              '<%= path.minCSS %>': ['tmp/css/main.css']
+              'dist/css/<%= pkg.name %>.min.css': ['tmp/css/main.css']
             }
           }
         },
@@ -72,7 +80,7 @@ module.exports = function (grunt) {
                 name: "app",
                 baseUrl: "public/js/",
                 mainConfigFile: "require.config.js",
-                out: "<%= path.raw %>"
+                out: "tmp/<%= pkg.name %>.js"
             }
           }
         },
@@ -100,7 +108,7 @@ module.exports = function (grunt) {
                     {
                         expand : true,
                         flatten : true,
-                        src : [ "<%= path.raw %>" ],
+                        src : [ "<%= requirejs.compile.options.out %>" ],
                         dest : "tmp/replaced/"
                     },
                     {expand: true, flatten: true, src: ['public/index.html'], dest: 'dist/'}
@@ -117,9 +125,7 @@ module.exports = function (grunt) {
             },
             dist : {
                 files : {
-                    "<%= path.minJS %>" : [
-                        "<%= path.replaced %>"
-                    ]
+                    "dist/js/<%= pkg.name %>.min.js" : ["tmp/replaced/<%= pkg.name %>.js"]
                 }
             }
         },
@@ -129,32 +135,11 @@ module.exports = function (grunt) {
                 jshintrc : ".jshintrc"
             },
 
-            beforeConcat : {
+            dist : {
                 files : {
                     src : [ "public/js" ]
                 }
-            },
-
-            afterConcat : {
-                files : {
-                    src : [ "<%= path.replaced %>" ]
-                }
             }
-        },
-
-        clean: {
-            options:{
-                force: true
-            },
-            dist: ["dist", "tmp"],
-            tmp: ["tmp"],
-            all: [
-                "tmp",
-                "dist",
-                ".sass-cache",
-                "node_modules",
-                "public/bower_components"
-            ]
         },
 
         copy: {
@@ -185,7 +170,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', ['compass:dev', 'watch']);
     grunt.registerTask("build", [ 
-        "clean:dist", "compass:dist", "cssmin", "jshint:beforeConcat", "requirejs", 
+        "clean:dist", "compass:dist", "cssmin","jshint:dist", "requirejs", 
         "replace:dist", "uglify", "cacheBust", "copy:dist", "clean:tmp" 
     ]);
     grunt.registerTask('hard-reset', ['clean:main']);

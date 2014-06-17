@@ -4,7 +4,6 @@ require(["../../require.config.js"], function (baseConfig) {
     // Set the require base configurations
     requirejs.config(baseConfig);
 
-
     //common requires to be loaded now that the require paths have been set
     require(["require", "backbone", "bootstrap"], function(require){
     	window.Mustache = require("mustache"); //http://stackoverflow.com/questions/16556419/requirejs-not-loading-mustache-window-object
