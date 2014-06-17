@@ -18,7 +18,9 @@ Having installed grunt, we can start adding plugins to our project, but say we a
     npm install -g grunt-init
     npm install -g grunt-init-gruntfile
 ````
-we then can call ``grunt init`` and walkthrough the questions the wizard displays. The result is a new Gruntfile.js file with it's plugins registered into your npm package.json file.
+we then can call ``grunt-init gruntfile`` and walkthrough the questions the wizard displays. The result is a new Gruntfile.js file with it's plugins registered into your npm package.json file.
+
+![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/misc/img/grunt-gen.png "Gruntfile through wizard")
 
 We'll be adding more plugins along the way, but for the time being lets fix the paths to point to where our project folders.
 
