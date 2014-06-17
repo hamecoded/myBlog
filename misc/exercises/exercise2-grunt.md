@@ -22,6 +22,8 @@ we then can call ``grunt-init gruntfile`` and walkthrough the questions the wiza
 
 ![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/misc/img/grunt-gen.png "Gruntfile through wizard")
 
+> Note that this will override your existing package.json file so back it up first
+
 We'll be adding more plugins along the way, but for the time being lets fix the paths to point to where our project folders.
 
 
