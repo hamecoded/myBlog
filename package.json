@@ -23,7 +23,7 @@
   "dependencies": {
     "express": "^4.4.3"
   },
-  "_devDependencies": {
+  "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-cache-bust": "^0.3.9",
     "grunt-contrib-clean": "~0.5.0",
@@ -40,7 +40,7 @@
   "engines": {
     "node": ">= 0.10.29"
   },
-  "devDependencies": {
+  "_devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-watch": "~0.6.1",

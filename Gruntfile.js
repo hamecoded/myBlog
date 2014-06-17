@@ -70,7 +70,7 @@ module.exports = function (grunt) {
           compile: {
             options: {
                 name: "app",
-                baseUrl: "public/js",
+                baseUrl: "public/js/",
                 mainConfigFile: "require.config.js",
                 out: "<%= path.raw %>"
             }
@@ -186,7 +186,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['compass:dev', 'watch']);
     grunt.registerTask("build", [ 
         "clean:dist", "compass:dist", "cssmin", "jshint:beforeConcat", "requirejs", 
-        "replace:dist", "jshint:afterConcat" , "uglify", "cacheBust", "copy:dist", "clean:tmp" 
+        "replace:dist", "uglify", "cacheBust", "copy:dist", "clean:tmp" 
     ]);
     grunt.registerTask('hard-reset', ['clean:main']);
 
