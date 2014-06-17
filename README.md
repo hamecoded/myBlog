@@ -28,6 +28,7 @@ Gists
 
 Exercises
 ----
+[Exercise 1] - Setting up GitHub repository; NPM and an HTTP server for our SPA
 [Exercise 2] - Setting up your Grunt file
 
 
@@ -41,5 +42,6 @@ MIT
 [tag 0.0.1]:https://github.com/hamecoded/myBlog/tree/0.0.1
 [tag 0.0.2]:https://github.com/hamecoded/myBlog/tree/0.0.2
 
-[Exercise 2]:https://github.com/hamecoded/myBlog/blob/master/misc/exercises/exercise2-grunt.md
+[Exercise 1]:https://github.com/hamecoded/myBlog/blob/master/misc/exercises/ex1-setup.md
+[Exercise 2]:https://github.com/hamecoded/myBlog/blob/master/misc/exercises/ex2-grunt.md
 
