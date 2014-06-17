@@ -25,6 +25,12 @@ Gists
 ----
 [course gists]
 
+
+Exercises
+----
+[Exercise 2] - Setting up your Grunt file
+
+
 License
 ----
 
@@ -34,4 +40,6 @@ MIT
 [course gists]:https://gist.github.com/hamecoded/f50b7e14f0c8fe3a8ad9
 [tag 0.0.1]:https://github.com/hamecoded/myBlog/tree/0.0.1
 [tag 0.0.2]:https://github.com/hamecoded/myBlog/tree/0.0.2
+
+[Exercise 2]:https://github.com/hamecoded/myBlog/blob/master/misc/exercises/exercise2-grunt.md
 
