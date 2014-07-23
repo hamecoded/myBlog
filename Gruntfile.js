@@ -35,17 +35,27 @@ module.exports = function (grunt) {
             ]
         },
 
+        // Run predefined tasks whenever watched file patterns are added, changed or deleted.
+        // https://github.com/gruntjs/grunt-contrib-watch
         watch: {
+            options: { 
+                // https://github.com/gruntjs/grunt-contrib-watch
+                livereload: true,
+                atBegin: true //This option will trigger the run of each specified task at startup of the watcher. 
+            },
+            //watch for sass files changing ; recompile them ; and reload browser
             compass: {
                 files: ['public/scss/*.{scss,sass}'],
                 tasks: ['compass:dev']
             },
-            livereload: {
-                files: ['public/css/*.css'],
-                options: { livereload: true }
+            //watch for changes in pre-index.html ; recompile index.html ; and refresh browser page
+            preindex: {
+                files: ['public/pre-index.html'],
+                tasks: ['preprocess:dev']
             }
         },
 
+        //compile sass to css
        compass: {  
             dist: {                  
               options: {              
@@ -205,17 +215,20 @@ module.exports = function (grunt) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-    grunt.registerTask('default', ['preprocess:dev', 'compass:dev', 'watch']);
+    grunt.registerTask('default', [
+        'watch' // preprocess html and reload page
+                // compass watch sass files and livereload
+    ]);
     grunt.registerTask("build", [ 
         "clean:dist",    //delete directories: tmp, dist
         "compass:dist",  //compile sass to tmp dir
         "cssmin",        //minify + add banner + copy to dist dir
         "jshint:dist",   //jsHint js source files under public/js
-        "requirejs",     // compile to tmp dir a single js file according to require config
-        "replace:dist", //replace in html file, variables with values, eg: appName and version + cacheBust
-        "preprocess:dist", //preprocess html according to annotations
+        "requirejs",     //compile to tmp dir a single js file according to require config
+        "replace:dist",  //replace in html file, variables with values, eg: appName and version + cacheBust and copy to tmp dir
+        "preprocess:dist", //preprocess html according to annotations and copy to dist dir
         "uglify",       // uglify and add banner to the js file generated in tmp by require
-        "copy:dist",
+        "copy:dist",    // copy to dist dir: public/img and tmp/css dir
         "clean:tmp"     // delete tmp dir
     ]);
     grunt.registerTask('hard-reset', ['clean:main']);
