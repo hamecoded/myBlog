@@ -4,13 +4,13 @@
  * https://github.com/cabaret/grunt-starter/blob/master/Gruntfile.js
  */
 module.exports = function (grunt) {
-    "use strict";
+    'use strict';
 
     require('load-grunt-tasks')(grunt);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
     grunt.initConfig({
-        pkg : grunt.file.readJSON("package.json"),
+        pkg : grunt.file.readJSON('package.json'),
 
         // Variables
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
@@ -24,14 +24,14 @@ module.exports = function (grunt) {
             options:{
                 force: true
             },
-            dist: ["dist", "tmp"],
-            tmp: ["tmp"],
+            dist: ['dist', 'tmp'],
+            tmp: ['tmp'],
             all: [
-                "tmp",
-                "dist",
-                ".sass-cache",
-                "node_modules",
-                "public/bower_components"
+                'tmp',
+                'dist',
+                '.sass-cache',
+                'node_modules',
+                'public/bower_components'
             ]
         },
 
@@ -112,8 +112,8 @@ module.exports = function (grunt) {
                 }
             },
             dist:{
-                src: "tmp/replaced-index.html",
-                dest:"dist/index.html",
+                src: 'tmp/replaced-index.html',
+                dest:'dist/index.html',
                 options:{
                     context : {
                         DEBUG: false
@@ -121,18 +121,18 @@ module.exports = function (grunt) {
                 }
             },
             dev:{
-                src: "public/pre-index.html",
-                dest:"public/index.html"
+                src: 'public/pre-index.html',
+                dest:'public/index.html'
             }
         },
 
         requirejs: {
           compile: {
             options: {
-                name: "app",
-                baseUrl: "public/js/",
-                mainConfigFile: "require.config.js",
-                out: "tmp/<%= pkg.name %>.js"
+                name: 'app',
+                baseUrl: 'public/js/',
+                mainConfigFile: 'require.config.js',
+                out: 'tmp/<%= pkg.name %>.js'
             }
           }
         },
@@ -140,8 +140,8 @@ module.exports = function (grunt) {
         replace : {
             options : {
                 variables : {
-                    "VERSION" : "<%= pkg.version %>",
-                    "APP_NAME" : "<%= pkg.name %>.min"
+                    'VERSION' : '<%= pkg.version %>',
+                    'APP_NAME' : '<%= pkg.name %>.min'
                 },
                 prefix : "@",
                 force : true
@@ -164,8 +164,8 @@ module.exports = function (grunt) {
                     {
                         expand : true,
                         flatten : true,
-                        src : [ "<%= requirejs.compile.options.out %>" ],
-                        dest : "tmp/replaced/"
+                        src : [ '<%= requirejs.compile.options.out %>' ],
+                        dest : 'tmp/replaced/'
                     },
                     { src: ['public/pre-index.html'], dest: 'tmp/replaced-index.html'}
                 ]
@@ -174,26 +174,26 @@ module.exports = function (grunt) {
 
         uglify : {
             options : {
-                report : "min",
-                preserveComments : "some",
+                report : 'min',
+                preserveComments : 'some',
                 banner: '<%= banner %>',
                 stripBanners: true
             },
             dist : {
                 files : {
-                    "dist/js/<%= pkg.name %>.min.js" : ["tmp/replaced/<%= pkg.name %>.js"]
+                    'dist/js/<%= pkg.name %>.min.js' : ['tmp/replaced/<%= pkg.name %>.js']
                 }
             }
         },
 
         jshint : {
             options : {
-                jshintrc : ".jshintrc"
+                jshintrc : '.jshintrc'
             },
 
             dist : {
                 files : {
-                    src : [ "public/js" ]
+                    src : [ 'public/js' ]
                 }
             }
         },
@@ -201,8 +201,8 @@ module.exports = function (grunt) {
         copy: {
             dist: {
                 files: [
-                    {expand: true, cwd: "public/", src: ['img/**'], dest: 'dist/'},
-                    {expand: true, cwd: "tmp/css/", src: ['<%= pkg.name %>.min.css'], dest: 'dist/css'}
+                    {expand: true, cwd: 'public/', src: ['img/**'], dest: 'dist/'},
+                    {expand: true, cwd: 'tmp/css/', src: ['<%= pkg.name %>.min.css'], dest: 'dist/css'}
                 ]
             },
             preindex: {
@@ -219,17 +219,17 @@ module.exports = function (grunt) {
         'watch' // preprocess html and reload page
                 // compass watch sass files and livereload
     ]);
-    grunt.registerTask("build", [ 
-        "clean:dist",    //delete directories: tmp, dist
-        "compass:dist",  //compile sass to tmp dir
-        "cssmin",        //minify + add banner + copy to dist dir
-        "jshint:dist",   //jsHint js source files under public/js
-        "requirejs",     //compile to tmp dir a single js file according to require config
-        "replace:dist",  //replace in html file, variables with values, eg: appName and version + cacheBust and copy to tmp dir
-        "preprocess:dist", //preprocess html according to annotations and copy to dist dir
-        "uglify",       // uglify and add banner to the js file generated in tmp by require
-        "copy:dist",    // copy to dist dir: public/img and tmp/css dir
-        "clean:tmp"     // delete tmp dir
+    grunt.registerTask('build', [ 
+        'clean:dist',    //delete directories: tmp, dist
+        'compass:dist',  //compile sass to tmp dir
+        'cssmin',        //minify + add banner + copy to dist dir
+        'jshint:dist',   //jsHint js source files under public/js
+        'requirejs',     //compile to tmp dir a single js file according to require config
+        'replace:dist',  //replace in html file, variables with values, eg: appName and version + cacheBust and copy to tmp dir
+        'preprocess:dist', //preprocess html according to annotations and copy to dist dir
+        'uglify',       // uglify and add banner to the js file generated in tmp by require
+        'copy:dist',    // copy to dist dir: public/img and tmp/css dir
+        'clean:tmp'     // delete tmp dir
     ]);
     grunt.registerTask('hard-reset', ['clean:main']);
 
