@@ -3,7 +3,14 @@
 <head>
 	<title></title>
 
+	<!-- @if DEBUG=true -->
 	<link rel="stylesheet" href="css/main.css" />
+	<!-- @endif -->
+
+	<!-- @if DEBUG=false -->
+	<link rel="stylesheet" href="css/@APP_NAME.css?rel=@@timestamp" />
+	<!-- @endif -->
+
 </head>
 <body>
 	Start Here!

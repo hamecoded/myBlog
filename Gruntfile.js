@@ -69,9 +69,51 @@ module.exports = function (grunt) {
               stripBanners: true
             },
             files: {
-              'dist/css/<%= pkg.name %>.min.css': ['tmp/css/main.css']
+              'tmp/css/<%= pkg.name %>.min.css': ['tmp/css/main.css']
             }
           }
+        },
+
+        //unused
+        htmlmin: {                                     // Task
+            dist: {                                      // Target
+              options: {                                 // Target options
+                removeComments: true,
+                collapseWhitespace: true,
+                removeOptionalTags:true,
+              },
+              files: {                                   // Dictionary of files
+                'dist/index.html': 'dist/index.html'     // 'destination': 'source'
+              }
+            },
+            dev: {                                       // Another target
+              files: {
+                'public/index.html': 'public/pre-index.html'
+              }
+            }
+        },
+
+        // modifies files using anotations of exclude and ifs
+        preprocess:{
+            options:{
+                inline: true,
+                context : {
+                    DEBUG: true
+                }
+            },
+            dist:{
+                src: "tmp/replaced-index.html",
+                dest:"dist/index.html",
+                options:{
+                    context : {
+                        DEBUG: false
+                    }
+                }
+            },
+            dev:{
+                src: "public/pre-index.html",
+                dest:"public/index.html"
+            }
         },
 
         requirejs: {
@@ -102,6 +144,10 @@ module.exports = function (grunt) {
                             match : /this\._super\(\s*([\w\.]+)\s*,\s*"(\w+)"\s*(,\s*)?/g,
                             replacement : "$1.prototype.$2.apply(this$3"
                         },
+                        {
+                            match: 'timestamp',
+                            replacement: '<%= new Date().getTime() %>'
+                        }
                     ],
                 },
                 files : [
@@ -111,7 +157,7 @@ module.exports = function (grunt) {
                         src : [ "<%= requirejs.compile.options.out %>" ],
                         dest : "tmp/replaced/"
                     },
-                    {expand: true, flatten: true, src: ['public/index.html'], dest: 'dist/'}
+                    { src: ['public/pre-index.html'], dest: 'tmp/replaced-index.html'}
                 ]
             }
         },
@@ -145,33 +191,32 @@ module.exports = function (grunt) {
         copy: {
             dist: {
                 files: [
-                    {expand: true, cwd: "public/", src: ['img/**'], dest: 'dist/'}
+                    {expand: true, cwd: "public/", src: ['img/**'], dest: 'dist/'},
+                    {expand: true, cwd: "tmp/css/", src: ['<%= pkg.name %>.min.css'], dest: 'dist/css'}
                 ]
-            }
-        },
-
-        cacheBust: {
-            options: {
-              encoding: 'utf8',
-              algorithm: 'md5',
-              length: 16
             },
-            assets: {
-                files: [{
-                    src: [ "dist/index.html" ]
-                }]
+            preindex: {
+                src: 'pre-index.html',
+                dest: 'index.html'
             }
         }
 
-       
     });
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-    grunt.registerTask('default', ['compass:dev', 'watch']);
+    grunt.registerTask('default', ['preprocess:dev', 'compass:dev', 'watch']);
     grunt.registerTask("build", [ 
-        "clean:dist", "compass:dist", "cssmin","jshint:dist", "requirejs", 
-        "replace:dist", "uglify", "cacheBust", "copy:dist", "clean:tmp" 
+        "clean:dist",    //delete directories: tmp, dist
+        "compass:dist",  //compile sass to tmp dir
+        "cssmin",        //minify + add banner + copy to dist dir
+        "jshint:dist",   //jsHint js source files under public/js
+        "requirejs",     // compile to tmp dir a single js file according to require config
+        "replace:dist", //replace in html file, variables with values, eg: appName and version + cacheBust
+        "preprocess:dist", //preprocess html according to annotations
+        "uglify",       // uglify and add banner to the js file generated in tmp by require
+        "copy:dist",
+        "clean:tmp"     // delete tmp dir
     ]);
     grunt.registerTask('hard-reset', ['clean:main']);
 
