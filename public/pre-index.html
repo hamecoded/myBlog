@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello </title>
+	<title>Hello @VERSION</title>
 
 	<!-- @if DEBUG=true -->
 	<link rel="stylesheet" href="css/main.css" />
-
 	<script src="//localhost:35729/livereload.js"></script>
-
 	<!-- @endif -->
 
 	<!-- @if DEBUG=false -->
@@ -16,8 +14,18 @@
 
 </head>
 <body>
-	Start Here!
+	Start Here Version @VERSION!
 
-    <!--script type="text/javascript" data-main="js/@APP_NAME.min.js" src="bower_components/requirejs/require.js"></script-->
+	<!-- @if DEBUG=true -->
+    <script type="text/javascript" 
+    	data-main="js/@APP_NAME.js" 
+    	src="bower_components/requirejs/require.js"></script>
+   	<!-- @endif -->
+
+	<!-- @if DEBUG=false -->
+    <script type="text/javascript" 
+    	data-main="js/@APP_NAME.js?rel=@@timestamp" 
+    	src="vendor/requirejs/require.js?rel=@@timestamp"></script>
+   	<!-- @endif -->
 </body>
 </html>

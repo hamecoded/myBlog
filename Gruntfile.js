@@ -51,7 +51,7 @@ module.exports = function (grunt) {
             //watch for changes in pre-index.html ; recompile index.html ; and refresh browser page
             preindex: {
                 files: ['public/pre-index.html'],
-                tasks: ['preprocess:dev']
+                tasks: ['preprocess:dev','replace:dev']
             }
         },
 
@@ -139,26 +139,26 @@ module.exports = function (grunt) {
 
         replace : {
             options : {
-                variables : {
-                    'VERSION' : '<%= pkg.version %>',
-                    'APP_NAME' : '<%= pkg.name %>.min'
-                },
+                patterns : [
+                    {
+                        match : /this\._super\(\s*([\w\.]+)\s*,\s*"(\w+)"\s*(,\s*)?/g,
+                        replacement : "$1.prototype.$2.apply(this$3"
+                    },
+                    {
+                        match: 'timestamp',
+                        replacement: '<%= new Date().getTime() %>'
+                    }
+                ],
                 prefix : "@",
                 force : true
             },
 
             dist : {
                 options : {
-                    patterns : [
-                        {
-                            match : /this\._super\(\s*([\w\.]+)\s*,\s*"(\w+)"\s*(,\s*)?/g,
-                            replacement : "$1.prototype.$2.apply(this$3"
-                        },
-                        {
-                            match: 'timestamp',
-                            replacement: '<%= new Date().getTime() %>'
-                        }
-                    ],
+                    variables : {
+                        'VERSION' : '<%= pkg.version %>',
+                        'APP_NAME' : '<%= pkg.name %>.min'
+                    },
                 },
                 files : [
                     {
@@ -168,6 +168,20 @@ module.exports = function (grunt) {
                         dest : 'tmp/replaced/'
                     },
                     { src: ['public/pre-index.html'], dest: 'tmp/replaced-index.html'}
+                ]
+            },
+            dev : {
+                options : {
+                    variables : {
+                        'VERSION' : '<%= pkg.version %>',
+                        'APP_NAME' : 'app'
+                    },
+                },
+                files : [
+                    {
+                        src : [ '<%= preprocess.dev.dest %>' ],
+                        dest : '<%= preprocess.dev.dest %>'
+                    }
                 ]
             }
         },
@@ -202,6 +216,7 @@ module.exports = function (grunt) {
             dist: {
                 files: [
                     {expand: true, cwd: 'public/', src: ['img/**'], dest: 'dist/'},
+                    {expand: true, cwd: 'public/bower_components', src: ['**'], dest: 'dist/vendor'},
                     {expand: true, cwd: 'tmp/css/', src: ['<%= pkg.name %>.min.css'], dest: 'dist/css'}
                 ]
             },
