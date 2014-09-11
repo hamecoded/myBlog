@@ -104,6 +104,7 @@ module.exports = function (grunt) {
         },
 
         // modifies files using anotations of exclude and ifs
+        // in this gruntfile the functionality of variable replacing was achieved using the replace module instead
         preprocess:{
             options:{
                 inline: true,
@@ -241,11 +242,11 @@ module.exports = function (grunt) {
         'jshint:dist',   //jsHint js source files under public/js
         'requirejs',     //compile to tmp dir a single js file according to require config
         'replace:dist',  //replace in html file, variables with values, eg: appName and version + cacheBust and copy to tmp dir
-        'preprocess:dist', //preprocess html according to annotations and copy to dist dir
+        'preprocess:dist', //preprocess html ifs according to annotations and copy to dist dir
         'uglify',       // uglify and add banner to the js file generated in tmp by require
         'copy:dist',    // copy to dist dir: public/img and tmp/css dir
         'clean:tmp'     // delete tmp dir
     ]);
-    grunt.registerTask('hard-reset', ['clean:main']);
+    grunt.registerTask('hard-reset', ['clean:all']);
 
 };
