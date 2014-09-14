@@ -3,7 +3,7 @@ The Secrets Of The Full Stack Ninja - Part A - The Client Side
 
 A SPA Blog App. A step by step project that accompanies a workshop for creating a modern fullstack web application. 
 
-![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/presentation/session1/artrage/resources/oded.jpg "Oded Sagir")
+![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/presentation/session1/artrage/resources/oded ninja.jpg "Oded Sagir")
 
 Tags
 ----
@@ -29,6 +29,7 @@ Gists
 Exercises
 ----
 [Exercise 1] - Setting up GitHub repository; NPM and an HTTP server for our SPA
+
 [Exercise 2] - Setting up your Grunt file
 
 
