@@ -3,7 +3,7 @@ The Secrets Of The Full Stack Ninja - Part A - The Client Side
 
 A SPA Blog App. A step by step project that accompanies a workshop for creating a modern fullstack web application. 
 
-![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/misc/img/oded.jpg "Oded Sagir")
+![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/presentation/session1/artrage/resources/oded.jpg "Oded Sagir")
 
 Tags
 ----
@@ -42,6 +42,6 @@ MIT
 [tag 0.0.1]:https://github.com/hamecoded/myBlog/tree/0.0.1
 [tag 0.0.2]:https://github.com/hamecoded/myBlog/tree/0.0.2
 
-[Exercise 1]:https://github.com/hamecoded/myBlog/blob/master/misc/exercises/ex1-setup.md
-[Exercise 2]:https://github.com/hamecoded/myBlog/blob/master/misc/exercises/ex2-grunt.md
+[Exercise 1]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex1-setup.md
+[Exercise 2]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex2-grunt.md
 

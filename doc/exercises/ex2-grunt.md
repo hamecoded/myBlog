@@ -20,7 +20,7 @@ Having installed grunt, we can start adding plugins to our project, but say we a
 ````
 we then can call ``grunt-init gruntfile`` and walkthrough the questions the wizard displays. The result is a new Gruntfile.js file with it's plugins registered into your npm package.json file.
 
-![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/misc/img/grunt-gen.png "Gruntfile through wizard")
+![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/exercises/img/grunt-gen.png "Gruntfile through wizard")
 
 > Note that this will override your existing package.json file so back it up first
 
@@ -67,7 +67,7 @@ $ npm install -g npm-check-updates
 $ npm-check-updates -u
 $ npm install 
 ````
-![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/misc/img/npm-update.png "Updates package.json modules to latest versions")
+![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/exercises/img/npm-update.png "Updates package.json modules to latest versions")
 
 Though you have [jsHint] set for your project it's best you also install the global package to give you cli interface for validating your JavaScript files.
 
