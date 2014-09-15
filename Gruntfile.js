@@ -133,7 +133,8 @@ module.exports = function (grunt) {
                 name: 'js/app',
                 baseUrl: 'public',
                 mainConfigFile: 'public/js/require.config.js',
-                out: 'tmp/<%= pkg.name %>.js'
+                out: 'tmp/<%= pkg.name %>.js',
+                include:  ['js/test.js']
             }
           }
         },
@@ -217,7 +218,7 @@ module.exports = function (grunt) {
             dist: {
                 files: [
                     {expand: true, cwd: 'public/', src: ['img/**'], dest: 'dist/'},
-                    {expand: true, cwd: 'public/bower_components', src: ['**'], dest: 'dist/vendor'},
+                    {expand: true, cwd: 'public/bower_components', src: ['**'], dest: 'dist/bower_components'},
                     {expand: true, cwd: 'tmp/css/', src: ['<%= pkg.name %>.min.css'], dest: 'dist/css'}
                 ]
             },
