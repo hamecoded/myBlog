@@ -62,7 +62,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>defaultLocation</key>
-					<string>~/workspace/myBlog/doc/presentation/session1/artrage/jpg</string>
+					<string>~/workspace/myBlog/doc/presentation/session1/jpg</string>
 					<key>granularity</key>
 					<integer>0</integer>
 					<key>multipleSelection</key>
@@ -227,9 +227,9 @@
 					<key>autoGenerateOutputName</key>
 					<false/>
 					<key>outputDirectory</key>
-					<string>~/workspace/myBlog/doc/presentation</string>
+					<string>~/workspace/myBlog/doc/presentation/session1</string>
 					<key>outputName</key>
-					<string>secretOfFullstackNinja.pdf</string>
+					<string>session1.pdf</string>
 					<key>pageSizeMode</key>
 					<integer>1</integer>
 					<key>replaceExistingOutput</key>
