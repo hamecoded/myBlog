@@ -10,6 +10,8 @@ In this exercise you will
   - Define build task
   - Define a dev watch task
 
+> use these [tips]
+
 Installing Grunt
 ----
 Before we begin setting our project with grunt, we first need to have grunt installed on our system, so that we can use it's command line interface in our terminal.
@@ -88,4 +90,4 @@ You can find a default .jshintrc file [here]
 [grunt-init-gruntfile]:https://github.com/gruntjs/grunt-init-gruntfile
 [jsHint]:http://www.jshint.com/docs/
 [here]:https://github.com/jshint/jshint/blob/master/examples/.jshintrc
-
+[tips]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex2-tips.md
