@@ -9,6 +9,7 @@ Tags
 ----
 * [tag 0.0.1] - in this tag we've reached the point where we have a server set to our SPA app.
 * [tag 0.0.2] - configured Gruntfile.js and some tasks to create a devop flow.
+* [tag 0.0.3] - using Bower, a package manager for the web.
 
 
 Distribute
@@ -32,6 +33,8 @@ Exercises
 
 [Exercise 2] - Setting up your Grunt file
 
+[Exercise 3] - Integrating Bower (Web Component Manager)
+
 
 License
 ----
@@ -42,7 +45,9 @@ MIT
 [course gists]:https://gist.github.com/hamecoded/f50b7e14f0c8fe3a8ad9
 [tag 0.0.1]:https://github.com/hamecoded/myBlog/tree/0.0.1
 [tag 0.0.2]:https://github.com/hamecoded/myBlog/tree/0.0.2
+[tag 0.0.3]:https://github.com/hamecoded/myBlog/tree/0.0.3
 
 [Exercise 1]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex1-setup.md
 [Exercise 2]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex2-grunt.md
+[Exercise 3]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex3-bower.md
 
