@@ -12,5 +12,12 @@
     "node_modules",
     "public",
     "doc"
-  ]
+  ],
+  "devDependencies": {
+    "bootstrap": "latest",
+    "marionette": "latest",
+    "requirejs": "latest",
+    "requirejs-text": "latest",
+    "mustache": "latest"
+  }
 }

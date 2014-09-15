@@ -1,4 +1,4 @@
-require(["../../require.config.js"], function (baseConfig) {
+require(["js/require.config.js"], function (baseConfig) {
     "use strict";
 
     // Set the require base configurations

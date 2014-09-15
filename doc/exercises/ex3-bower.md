@@ -5,9 +5,9 @@ Excercise 3 - adding Bower
 
 In this exercise you will
 - install Bower using npm
+- init a bower package
 - configure Bower
-- ]
--
+- add frameworks to your project]
 
 # Install Bower
 ```sh
