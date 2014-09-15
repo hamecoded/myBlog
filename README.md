@@ -31,6 +31,9 @@ Gists
 
 Exercises
 ----
+
+####Session I - Devop
+
 [Exercise 1] - Setting up GitHub repository; NPM and an HTTP server for our SPA
 
 [Exercise 2] - Setting up your Grunt file
