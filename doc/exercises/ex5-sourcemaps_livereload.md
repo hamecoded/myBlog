@@ -27,7 +27,7 @@ npm install
 
 ##Config gruntfile
 all you now have to do is to open your Gruntfile.js look for the compass configuration, the one that you'd like sourcemaps to be generated for you (compass:dev) and just add to it's options the sourcemap attribute which you'll set to true
-```json
+```js
    compass: {
         dist: {
           ...
@@ -54,9 +54,9 @@ you are now all ready to setup Chrome Devtool. Follow the next steps:
 4.At this point you can load your app and notice that devtool refrences your css selectors to a sass src rather than a css src. Well that's yet not enough. For you to be able to modify sass on the disk:
 - follow the link to your sass file. It would show you the file in the devtool *Sources* tab
 - find the file in the Sources tree and right-click on the file to select the "Map To FileSystem Resource..". Since you've added your project directory to devtool workspace a selection popup will show you possible matching to the files in your system, based on path, select the right match and you'll be prompted to reload the inspector.
-- once reloaded the source tree would show the projects folder rather than as domain based resource.
 ![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/exercises/img/map2fs.png "Map To Filesyatem Resource..")
 ![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/exercises/img/map2fs-2.png "Apply fs mapping")
+- once reloaded the source tree would show the projects folder rather than as domain based resource.
 
 5.Now you can modify a sass file and use the CTRL+S to save it to disk
 > an astrix(*) over the file would indicate a unsave modified file.
@@ -68,7 +68,7 @@ you are now all ready to setup Chrome Devtool. Follow the next steps:
 ##Configuring LiveReload
 1. install *grunt-contrib-watch*
 2. set Gruntfile accordingly
-```json
+```js
   watch: {
     options: {
         livereload: true,
@@ -81,6 +81,7 @@ you are now all ready to setup Chrome Devtool. Follow the next steps:
 ```
 4. run the grunt watch task
 5. ENJOY!!
+
 >⚠ I like much more this approach than the approach of having a livereload extension installed on each of your browsers.
 
 ##Troubleshooting LiveReload
