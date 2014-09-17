@@ -5,12 +5,12 @@ define({
         "vendor": "../bower_components",
         "underscore": "../bower_components/underscore/underscore",
         "mustache": "../bower_components/mustache/mustache",
-        "jquery": "../bower_components/jquery/dist/jquery",
-        "backbone": "../bower_components/backbone/backbone",
-        "backbone.wreqr": "../bower_components/backbone.wreqr/lib/backbone.wreqr",
-        "backbone.babysitter": "../bower_components/backbone.babysitter/lib/backbone.babysitter",
-        "marionette": "../bower_components/marionette/lib/backbone.marionette",
-        "bootstrap": "../bower_components/bootstrap/dist/js/bootstrap",
+        "jquery": "../bower_components/jquery/dist/jquery.min",
+        "backbone": "../bower_components/backbone/backbone.min",
+        "backbone.wreqr": "../bower_components/backbone.wreqr/lib/backbone.wreqr.min",
+        "backbone.babysitter": "../bower_components/backbone.babysitter/lib/backbone.babysitter.min",
+        "marionette": "../bower_components/marionette/lib/backbone.marionette.min",
+        "bootstrap": "../bower_components/bootstrap/dist/js/bootstrap.min",
 
         // Require Modules to be used as pragmas
         // ---------

@@ -128,6 +128,7 @@ module.exports = function (grunt) {
             }
         },
 
+        //grunt clean:dist | grunt requirejs:compile
         requirejs: {
           compile: {
             options: {
