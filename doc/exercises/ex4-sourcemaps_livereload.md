@@ -1,4 +1,4 @@
-# Exercise 5- Setting up your environment to work with sourcemaps and livereload
+# Exercise 4- Setting up your environment to work with sourcemaps and livereload
 
 > 30min
 
