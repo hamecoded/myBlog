@@ -67,7 +67,8 @@ module.exports = function (grunt) {
             dev: {                    
               options: {
                 sassDir: 'public/scss',
-                cssDir: 'public/css'
+                cssDir: 'public/css',
+                sourcemap: true
               }
             }
         },

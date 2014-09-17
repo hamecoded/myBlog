@@ -43,7 +43,11 @@ load-grunt-tasks
 npm install load-grunt-tasks --save-dev
 ```
 
+# Grunt Preprocess
+>[link](https://github.com/jsoverson/grunt-preprocess)
 
+used mainly to add conditionals into html files, hence omitting code fragments through booleans.
+It can also replace variables inside the files by adding a comment block with the @echo VARIABLE syntax. I personally find it uncomfortable and prefer using grunt-contrib-replace for switching variables with their values, where the @ is a good enough identifier.
 
 [grunt-init]:http://gruntjs.com/project-scaffolding
 [grunt-init-gruntfile]:https://github.com/gruntjs/grunt-init-gruntfile

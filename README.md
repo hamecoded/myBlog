@@ -40,6 +40,8 @@ Exercises
 
 [Exercise 3] - Integrating Bower (Web Component Manager)
 
+[Exercise 5] - Using Sourcemaps and Livereload
+
 
 License
 ----
@@ -55,4 +57,5 @@ MIT
 [Exercise 1]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex1-setup.md
 [Exercise 2]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex2-grunt.md
 [Exercise 3]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex3-bower.md
+[Exercise 5]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex5-sourcemaps_livereload.md
 
