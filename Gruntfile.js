@@ -133,7 +133,7 @@ module.exports = function (grunt) {
             options: {
                 name: 'js/app',
                 baseUrl: 'public',
-                mainConfigFile: 'public/js/require.config.js',
+                //mainConfigFile: 'public/js/require.config.js',
                 //include:  ['js/test.js']
                 out: 'tmp/<%= pkg.name %>.js'
             }
