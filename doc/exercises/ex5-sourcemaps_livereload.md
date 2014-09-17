@@ -2,18 +2,19 @@
 
 ## Preperations
 To have sourcemaps enabled you'll need to do some modification to your development environment:
+
 1. update your sass gem
 ```
 gem update sass
 ```
 > failing to do so will result in errors when running compass
 
-2. install compass alpha
+2.install compass alpha
 ```
 gem install compass --pre
 ```
 
-3. update your grunt-contrib-compass to latest
+3.update your grunt-contrib-compass to latest
 > either modify package.json dependency to *latest* rather than a specified version or manually state a version or use *npm-check-updates* module.
 
 ```
@@ -48,10 +49,13 @@ all you now have to do is to open your Gruntfile.js look for the compass configu
 you are now all ready to setup Chrome Devtool. Follow the next steps:
 
 1.open chrome devtool.
+
 2.open it's settings (cog icon) and under the general tab check the **"Enable CSS source maps"** and it's sub-option "Auto-reload generated CSS".
 ![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/exercises/img/devtool-enable_sourcemaps.png "Enable sourcemaps in Chrome")
+
 3. now we need to allow chrome devtool to modify our file on the disk. For that, go to the workspace tab in the devtool settings and "Add Folder" where you'll browser to the root directory of your project in your filesystem. You'll be prompted to allow full access to the directory you specified.
 ![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/exercises/img/devtool_fs_access.png "Allow devtool access to your fs")
+
 4.At this point you can load your app and notice that devtool refrences your css selectors to a sass src rather than a css src. Well that's yet not enough. For you to be able to modify sass on the disk:
 - follow the link to your sass file. It would show you the file in the devtool *Sources* tab
 - find the file in the Sources tree and right-click on the file to select the "Map To FileSystem Resource..". Since you've added your project directory to devtool workspace a selection popup will show you possible matching to the files in your system, based on path, select the right match and you'll be prompted to reload the inspector.
@@ -68,7 +72,9 @@ you are now all ready to setup Chrome Devtool. Follow the next steps:
 
 
 ##Configuring LiveReload
+
 1.install *grunt-contrib-watch*
+
 2.set Gruntfile accordingly
 ```js
   watch: {
@@ -82,6 +88,7 @@ you are now all ready to setup Chrome Devtool. Follow the next steps:
 	<script src="//localhost:35729/livereload.js"></script>
 ```
 4. run the grunt watch task
+
 5. ENJOY!!
 
 >⚠ I like much more this approach than the approach of having a livereload extension installed on each of your browsers.
