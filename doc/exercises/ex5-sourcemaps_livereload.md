@@ -83,13 +83,13 @@ you are now all ready to setup Chrome Devtool. Follow the next steps:
         ...
     },
 ```
-3. add to your html file a livereload script
+3.add to your html file a livereload script
 ```html
 	<script src="//localhost:35729/livereload.js"></script>
 ```
-4. run the grunt watch task
+4.run the grunt watch task
 
-5. ENJOY!!
+5.ENJOY!!
 
 >⚠ I like much more this approach than the approach of having a livereload extension installed on each of your browsers.
 
