@@ -47,7 +47,7 @@ requirejs: {
 requirejs: {
   compile: {
     options: {
-        //properties name out and mainConfigFile should not be defined when using modules
+        //properties name; out; and mainConfigFile should not be defined when using modules
         baseUrl: 'public/js',
         modules: [
             {
@@ -64,8 +64,7 @@ requirejs: {
                 wrap: true
             }
         ],
-        dir: 'dist/js/moduleA',
-        renameTo: 'main'
+        dir: 'dist/js'
     }
   }
 }
