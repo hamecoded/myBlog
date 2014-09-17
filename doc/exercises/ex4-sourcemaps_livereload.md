@@ -95,7 +95,7 @@ you are now all ready to setup Chrome Devtool. Follow the next steps:
 
 5.ENJOY!!
 
->⚠ I like much more this approach than the approach of having a livereload extension installed on each of your browsers.
+>⚠ I like much more this approach than the approach of having a livereload extension installed on each of your browsers. But if you do wish to install the extension visit [livereload site].
 
 ##Troubleshooting LiveReload
 Once in a while livereload server ran by grunt watch may fuck up and require forced restart.
@@ -117,3 +117,5 @@ node      27569 odeds   16u  IPv4 0xa02f8facdb1ec3fd      0t0  TCP localhost:357
 ➜  myBlog git:(master) ✗
 ```
 
+
+[livereload site]:http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-
