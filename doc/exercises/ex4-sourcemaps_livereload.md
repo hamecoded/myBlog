@@ -55,6 +55,8 @@ you are now all ready to setup Chrome Devtool. Follow the next steps:
 2.open it's settings (cog icon) and under the general tab check the **"Enable CSS source maps"** and it's sub-option "Auto-reload generated CSS".
 ![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/exercises/img/devtool-enable_sourcemaps.png "Enable sourcemaps in Chrome")
 
+>**Chrome Bug:** Note that we'll use the LiveReload since devtool "Auto-reload generated CSS" is buggy. For it to reload the css once they've been changed on disk you must open the css file in the sources tab and then switch tab, otherwize the changes wouldn't be reflected. Tested on latest Chrome 37 and on Chrome Version 38.0.2125.58 beta. So you can work with this workaround, but if you intend to use livereload uncheck it.
+
 3.now we need to allow chrome devtool to modify our file on the disk. For that, go to the workspace tab in the devtool settings and "Add Folder" where you'll browser to the root directory of your project in your filesystem. You'll be prompted to allow full access to the directory you specified.
 ![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/exercises/img/devtool_fs_access.png "Allow devtool access to your fs")
 
@@ -87,7 +89,7 @@ you are now all ready to setup Chrome Devtool. Follow the next steps:
 ```
 3.add to your html file a livereload script
 ```html
-	<script src="//localhost:35729/livereload.js"></script>
+  <script src="//localhost:35729/livereload.js"></script>
 ```
 4.run the grunt watch task
 
@@ -114,3 +116,4 @@ node      27569 odeds   16u  IPv4 0xa02f8facdb1ec3fd      0t0  TCP localhost:357
 ➜  myBlog git:(master) ✗ lsof -i tcp:35729
 ➜  myBlog git:(master) ✗
 ```
+
