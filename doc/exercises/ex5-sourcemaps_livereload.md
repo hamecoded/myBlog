@@ -53,7 +53,7 @@ you are now all ready to setup Chrome Devtool. Follow the next steps:
 2.open it's settings (cog icon) and under the general tab check the **"Enable CSS source maps"** and it's sub-option "Auto-reload generated CSS".
 ![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/exercises/img/devtool-enable_sourcemaps.png "Enable sourcemaps in Chrome")
 
-3. now we need to allow chrome devtool to modify our file on the disk. For that, go to the workspace tab in the devtool settings and "Add Folder" where you'll browser to the root directory of your project in your filesystem. You'll be prompted to allow full access to the directory you specified.
+3.now we need to allow chrome devtool to modify our file on the disk. For that, go to the workspace tab in the devtool settings and "Add Folder" where you'll browser to the root directory of your project in your filesystem. You'll be prompted to allow full access to the directory you specified.
 ![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/exercises/img/devtool_fs_access.png "Allow devtool access to your fs")
 
 4.At this point you can load your app and notice that devtool refrences your css selectors to a sass src rather than a css src. Well that's yet not enough. For you to be able to modify sass on the disk:
