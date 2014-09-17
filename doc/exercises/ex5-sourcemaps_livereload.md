@@ -1,5 +1,7 @@
 # Exercise 5- Setting up your environment to work with sourcemaps and livereload
 
+> 30min
+
 ## Preperations
 To have sourcemaps enabled you'll need to do some modification to your development environment:
 
