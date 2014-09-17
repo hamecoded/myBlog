@@ -57,8 +57,10 @@ you are now all ready to setup Chrome Devtool. Follow the next steps:
 ![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/exercises/img/map2fs.png "Map To Filesyatem Resource..")
 ![Alt text](https://raw.githubusercontent.com/hamecoded/myBlog/master/doc/exercises/img/map2fs-2.png "Apply fs mapping")
 - once reloaded the source tree would show the projects folder rather than as domain based resource.
+
 5.Now you can modify a sass file and use the CTRL+S to save it to disk
 > an astrix(*) over the file would indicate a unsave modified file.
+
 6. Together with grunt-contrib-watch livereload changing a sass in devtool will modify the disk which inturn will reload the inspector.d
 
 > NOTE: This is necessary because currently if you edit a sass file in devtool the inspector will automatically switch to showing css and not sass **A BUG**, but when used with livereload it we'll reshow it as sass once changed file is reloaded from disk. Hence giving you the ultimate web development workflow for css.
