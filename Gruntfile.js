@@ -163,15 +163,12 @@ module.exports = function (grunt) {
                         "templates": "./templates"
                 },
                 shim:{
-                    "underscore":{
-                        // Exports the global window._ object
-                        "exports": "_"
-                    },
-                    "jquery":{
-                        "exports": "$"
-                    },
+                    //Globally exposed variables:
+                    // $ jQuery Backbone Marionette _ 
+                    //unexposed globally variables:
+                    // mustache(need exposing inorder to be used) 
+                    // bootstrap(built ontop of $)
                     "backbone":{
-                        "exports": "Backbone",
                         "deps":[
                             "underscore",
                             "mustache"
@@ -193,11 +190,7 @@ module.exports = function (grunt) {
                     },
                     "bootstrap":{
                         "deps":["jquery"]
-                    },
-                    "mustache":{
-                        "exports":"Mustache"
                     }
-
                 }
                 
             }
