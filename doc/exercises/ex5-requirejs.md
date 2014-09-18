@@ -69,9 +69,38 @@ requirejs: {
   }
 }
 ```
+#[require exports]
+
+lib file
+```js
+var global_exposed_lib_var= function(){...};
+```
+require config
+```js
+paths:{
+    "foo": "some_path/lib"
+},
+shim:{
+    "foo":{
+        // exports should be used for none AMD only, hooking the lib globally exposed
+        // named variable to the path key.
+        "exports": "global_exposed_lib_var"
+    },
+    ...
+}
+```
+using the lib
+```js
+    require(['foo'], function(foo) {
+        //As you can see in the console foo correctly contains the content of the
+        //global_exposed_lib_var global variable from lib (as defined in the shim config)
+        document.write("foo: ");
+        document.write(JSON.stringify(foo));
+    }
+```
 
 #grunt truncation
-if using mainConfigFile without any requirejs({}), require({}), requirejs.config({}) or require.config({}) call found in that file no truncation of none AMD complient files will be done. instead runtime will load them when required.
+if using mainConfigFile without any requirejs({}), require({}), requirejs.config({}) or require.config({}) call found in that file no truncation of none AMD compliant files will be done. instead runtime will load them when required.
 ```js
 requirejs.config({
     paths:{
@@ -95,3 +124,4 @@ define({
 
 
 [example r.js config]:https://github.com/jrburke/r.js/blob/master/build/example.build.js
+[require exports]:http://plnkr.co/edit/Rn0JvdNloKaFyOwAWgQ1?p=preview
