@@ -132,11 +132,74 @@ module.exports = function (grunt) {
         requirejs: {
           compile: {
             options: {
-                name: 'js/app',
                 baseUrl: 'public',
+                name: 'js/app',
+                findNestedDependencies: true,
+                out: 'tmp/<%= pkg.name %>.js',
                 //mainConfigFile: 'public/js/require.config.js',
-                //include:  ['js/test.js']
-                out: 'tmp/<%= pkg.name %>.js'
+                paths: {
+                        // Libraries
+                        // ---------
+                        "vendor": "./bower_components",
+                        "underscore": "./bower_components/underscore/underscore",
+                        "mustache": "./bower_components/mustache/mustache",
+                        "jquery": "./bower_components/jquery/dist/jquery.min",
+                        "backbone": "./bower_components/backbone/backbone",
+                        "backbone.wreqr": "./bower_components/backbone.wreqr/lib/backbone.wreqr.min",
+                        "backbone.babysitter": "./bower_components/backbone.babysitter/lib/backbone.babysitter.min",
+                        "marionette": "./bower_components/marionette/lib/backbone.marionette.min",
+                        "bootstrap": "./bower_components/bootstrap/dist/js/bootstrap.min",
+
+                        // Require Modules to be used as pragmas
+                        // ---------
+                        "text": "./bower_components/requirejs-text/text",
+
+                        // Backbone Folder Structure
+                        // -------------------
+                        "models": "js/models",
+                        "collections": "collections",
+                        "routers": "routers",
+                        "views": "views",
+                        "templates": "./templates"
+                },
+                shim:{
+                    "underscore":{
+                        // Exports the global window._ object
+                        "exports": "_"
+                    },
+                    "jquery":{
+                        "exports": "$"
+                    },
+                    "backbone":{
+                        "exports": "Backbone",
+                        "deps":[
+                            "underscore",
+                            "mustache"
+                        ]
+                    },
+                    "backbone.wreqr":{
+                        "deps": ["backbone"]
+                    },
+                    "backbone.babysitter":{
+                        "deps": ["backbone"]
+                    },
+                    "marionette":{
+                        "exports": "Marionette",
+                        "deps":[
+                            "backbone",
+                            "backbone.wreqr",
+                            "backbone.babysitter"
+                        ]
+                    },
+                    "bootstrap":{
+                        "deps":["jquery"]
+                    },
+                    "mustache":{
+                        "exports":"Mustache"
+                    }
+
+                }
+                
             }
           }
         },

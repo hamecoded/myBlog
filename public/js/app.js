@@ -1,15 +1,14 @@
-require(["js/require.config.js"], function (baseConfig) {
+require(["js/require.config"], function (baseConfig) {
     "use strict";
 
     // Set the require base configurations
     requirejs.config(baseConfig);
 
     //common requires to be loaded now that the require paths have been set
-    require(["require", "backbone", "bootstrap"], function(require){
-    	window.Mustache = require("mustache"); 
+    require(["require", "mustache", "backbone", "bootstrap"], function(require){
 
     	//app specific require
-		require(["js/test.js"], function (test) {
+		require(["js/test"], function (test) {
 			$("body").html(test);
 
 		});

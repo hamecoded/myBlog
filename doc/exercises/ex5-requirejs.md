@@ -1,4 +1,4 @@
-# Exercise 4 -Requirejs and r.js
+# Exercise 5 -Requirejs and r.js
 
 
 reference an [example r.js config] file the main documentation source of the many properties you can use.
