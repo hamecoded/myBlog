@@ -19,12 +19,19 @@ In this exercise you will
     index.html
     pre-index.html
   ```
+<<<<<<< HEAD
   - Install Grunt cli globally
   - Install grunt local to project
   - Build ontop of the [sample Gruntfile.js]
   - Add Grunt and install the relevant grunt tasks
   - Define a build task to copy uglified js files to dist directory
   - Define a dev watch task that transpiles scss files to css upon file change
+=======
+  
+  - Add Grunt tasks
+  - Define build task
+  - Define a dev watch task
+>>>>>>> d262b28... update grunt tips
 
 > use these [tips]
 
