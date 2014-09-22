@@ -22,10 +22,10 @@ In this exercise you will
     index.html
     pre-index.html
   ```
-  
-  - Add Grunt tasks
-  - Define build task
-  - Define a dev watch task
+
+  - Add Grunt tasks(pick one or two off the list below)
+  - Define a build task to copy uglified js files to dist directory
+  - Define a dev watch task that transpiles scss files to css upon file change
 
 > use these [tips]
 
