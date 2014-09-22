@@ -4,8 +4,21 @@ Excercise 2 - Setting up your grunt file
 
 In this exercise you will
 
-  - Install Grunt
+  - Install Grunt cli globally
+  - Install grunt local to project
   - Create Gruntfile.js off a template
+  - create the following file structure under project root
+   \dist
+   \public
+    \js
+      app.js
+    \css
+    \scss
+      main.scss
+    \img
+      someImage.png
+    index.html
+    pre-index.html
   - Add Grunt tasks
   - Define build task
   - Define a dev watch task
