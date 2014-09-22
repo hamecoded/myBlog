@@ -8,6 +8,7 @@ In this exercise you will
   - Install grunt local to project
   - Create Gruntfile.js off a template
   - create the following file structure under project root
+  ```
    \dist
    \public
     \js
@@ -19,6 +20,7 @@ In this exercise you will
       someImage.png
     index.html
     pre-index.html
+  ```
   - Add Grunt tasks
   - Define build task
   - Define a dev watch task
