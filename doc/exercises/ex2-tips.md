@@ -42,6 +42,11 @@ load-grunt-tasks
 ```sh
 npm install load-grunt-tasks --save-dev
 ```
+You should also add to your Gruntfile.js under the use-strict
+
+```js
+    require('load-grunt-tasks')(grunt);
+```
 
 # Grunt Preprocess
 >[link](https://github.com/jsoverson/grunt-preprocess)
