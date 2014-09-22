@@ -13,7 +13,7 @@ grunt-init
 Having installed grunt, we can start adding plugins to our project, but say we are lazy and want to start off a template Gruntfile.js we'll need a couple of more system wide grunt npm modules installed, the first one to be is [grunt-init] and to go with that we'll also want [grunt-init-gruntfile]. The two basically will have us scaffold our gruntfile in a friendly cli wizard.
 ````sh
     npm install -g grunt-init
-    npm install -g grunt-init-gruntfile
+	git clone https://github.com/gruntjs/grunt-init-gruntfile.git ~/.grunt-init/gruntfile
 ````
 we then can call ``grunt-init gruntfile`` and walkthrough the questions the wizard displays. The result is a new Gruntfile.js file with it's plugins registered into your npm package.json file.
 
