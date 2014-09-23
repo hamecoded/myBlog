@@ -4,10 +4,7 @@ Excercise 2 - Setting up your grunt file
 
 In this exercise you will
 
-  - Install Grunt cli globally
-  - Install grunt local to project
-  - Create Gruntfile.js off a template
-  - create the following file structure under project root
+  - Create the following file structure under project root
 
   ```txt
    \dist
@@ -22,8 +19,10 @@ In this exercise you will
     index.html
     pre-index.html
   ```
-
-  - Add Grunt tasks(pick one or two off the list below)
+  - Install Grunt cli globally
+  - Install grunt local to project
+  - Build ontop of the [sample Gruntfile.js]
+  - Add Grunt and install the relevant grunt tasks
   - Define a build task to copy uglified js files to dist directory
   - Define a dev watch task that transpiles scss files to css upon file change
 
@@ -108,3 +107,4 @@ You can find a default .jshintrc file [here]
 [jsHint]:http://www.jshint.com/docs/
 [here]:https://github.com/jshint/jshint/blob/master/examples/.jshintrc
 [tips]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex2-tips.md
+[sample Gruntfile.js]:https://github.com/hamecoded/myBlog/blob/master/doc/exercises/ex2-sample_gruntfile.js
