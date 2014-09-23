@@ -81,8 +81,11 @@ Define a build task
 > Follow the presentation slide regarding this flow
 
 This task completion crieteria is to __at least__ define these 3 important modules:
+
 1. define compass through gruntfile rather than through config.rb to transpile your sass into css.
+
 2. Same follows to linting JavaScript through jsHint (see below).
+
 3. And preprocess your html to account for dev and release configurations.
 
 _requirejs through r.js is another important task but we'll come across this later._
