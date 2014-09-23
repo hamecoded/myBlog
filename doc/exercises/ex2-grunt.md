@@ -41,8 +41,21 @@ Having grunt installed on our system we now add the grunt module to our project]
     npm install grunt --save-dev
 ````
 
-Adding more plugins
+NPM plugins for this task
 ----
+```sh
+npm install grunt-contrib-compass --save-dev
+npm install grunt-contrib-uglify --save-dev
+npm install grunt-contrib-watch --save-dev
+npm install load-grunt-tasks --save-dev
+```
+
+# Optional - complete the full build task
+
+Define a build task
+----
+> Follow the presentation slide regarding the task build
+
 You can either use the cli to add modules selectively or add them directly to npm package.json file.
 
 ```sh
@@ -76,10 +89,7 @@ npm install load-grunt-tasks --save-dev
   }
 ```
 
-Define a build task
-----
-> Follow the presentation slide regarding this flow
-
+# Optional - challange yourself with a core build task
 This task completion crieteria is to __at least__ define these 3 important modules:
 
 1. define compass through gruntfile rather than through config.rb to transpile your sass into css.
@@ -92,7 +102,7 @@ _requirejs through r.js is another important task but we'll come across this lat
 
 
 
-Setting Up jsHint (grunt-contrib-jshint)
+Tip: Setting Up jsHint (grunt-contrib-jshint)
 ----
 
 Though you have [jsHint] set for your project it's best you also install the global package to give you cli interface for validating your JavaScript files.
