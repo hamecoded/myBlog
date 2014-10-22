@@ -8,4 +8,5 @@ doc/gitbook
 
 dist/
 tmp/
+doc/
 public/css
