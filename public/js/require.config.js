@@ -1,5 +1,5 @@
-define({
-    paths:{
+require.config({
+    "paths":{
         // Libraries
         // ---------
         "vendor": "./bower_components",
@@ -27,7 +27,7 @@ define({
         "views": "js/views",
         "templates": "templates"
     },
-    shim:{
+    "shim":{
         //Globally exposed variables:
         //$ jQuery Backbone _ Marionette
         //unexposed globally variables:

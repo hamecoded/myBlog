@@ -2,9 +2,6 @@ require(["js/require.config"], function (baseConfig) {
     "use strict";
     //debugger; //jshint ignore:line
 
-    // Set the require base configurations
-    requirejs.config(baseConfig);
-
     //common requires to be loaded now that the require paths have been set
     require(["require", "backbone", "marionette", "mustache", "bootstrap"], 
         function(require, backbone, marionette, mustache){

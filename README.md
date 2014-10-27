@@ -33,7 +33,6 @@ NODE_ENV=production node server.js
 
 Common Pitfalls
 ----
-Currently requirejs configuration json in Gruntfile.js is a clone of whatever you use in require.config.js. So for `grunt build` to work you must manually copy your paths to the Gruntfile.js
 
 
 License
