@@ -33,7 +33,7 @@ NODE_ENV=production node server.js
 
 Common Pitfalls
 ----
-
+For the application to run off of dist folder you must set an http server to root into that directory, otherwize routing won't take place. Consider using ngrok.com for that task if you aren't on the root http dir `./ngrok 127.0.0.1:80/myBlog/dist/`.  
 
 License
 ----
