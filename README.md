@@ -11,6 +11,13 @@ Install
 git clone --depth 1 -b boilerplate --single-branch git@github.com:hamecoded/myBlog.git
 ```
 
+Develop
+----
+```sh
+npm install & bower install
+grunt
+```
+
 Distribute
 ----
 ```sh
