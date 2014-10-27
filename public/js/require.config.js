@@ -21,9 +21,9 @@ define({
         // Backbone Folder Structure
         // -------------------
         "models": "js/models",
-        "collections": "collections",
-        "routers": "routers",
-        "views": "views",
+        "collections": "js/collections",
+        "controllers": "js/controllers",
+        "views": "js/views",
         "templates": "templates"
     },
     shim:{
