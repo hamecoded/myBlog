@@ -1,6 +1,6 @@
 require(["js/require.config"], function (baseConfig) {
     "use strict";
-debugger; //jshint ignore:line
+    //debugger; //jshint ignore:line
 
     // Set the require base configurations
     requirejs.config(baseConfig);
@@ -9,8 +9,7 @@ debugger; //jshint ignore:line
     require(["require", "backbone", "marionette", "mustache", "bootstrap"], 
         function(require, backbone, marionette, mustache){
         window.Mustache = mustache; //http://stackoverflow.com/questions/16556419/requirejs-not-loading-mustache-window-object
-        //TODO: routes: widget settings callback
-        //app specific require
+
         //app specific require
         require(["controllers/AppController"], function (AppController) {
             window.router = new AppController();
