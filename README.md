@@ -18,6 +18,8 @@ npm install & bower install
 grunt
 ```
 
+once every while run `npm-check-updates -u` to update version in package.json and then `npm install`.
+
 Distribute
 ----
 ```sh
