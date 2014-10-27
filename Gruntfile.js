@@ -136,7 +136,7 @@ module.exports = function (grunt) {
                 name: 'js/app',
                 findNestedDependencies: true,  //truncates to output file all dependecies that are parsed so that you don't need to include them seperatly
                 out: 'tmp/<%= pkg.name %>.js',
-                mainConfigFile: 'public/js/require.config.js'  //BUG: doesn't get applied when findNestedDependencies is turned on
+                mainConfigFile: 'public/js/require.config.js'
             }
           }
         },
