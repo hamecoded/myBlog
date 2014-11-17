@@ -1,4 +1,4 @@
-The Secrets Of The Full Stack Ninja - The Client Side Boilerplate
+Backbone Client Side Boilerplate
 ======
 
 A modern fullstack web application boilerplate. 

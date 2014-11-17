@@ -4,17 +4,20 @@
 	<title>Hello @VERSION</title>
 
 	<!-- @if DEBUG=true -->
-	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="/css/main.css" />
 	<script src="//localhost:35729/livereload.js"></script>
 	<!-- @endif -->
 
 	<!-- @if DEBUG=false -->
-	<link rel="stylesheet" href="css/@APP_NAME.css?rel=@@timestamp" />
+	<link rel="stylesheet" href="/css/@APP_NAME.css?rel=@@timestamp" />
 	<!-- @endif -->
 
 </head>
 <body>
+	<div id="main">
 	Start Here Version @VERSION!
+
+	</div>
 
 	<!-- @if DEBUG=true -->
 	<script type="text/javascript">
@@ -23,14 +26,14 @@
 		};
 	</script>
     <script type="text/javascript" 
-    	data-main="js/@APP_NAME.js" 
-    	src="bower_components/requirejs/require.js"></script>
+    	data-main="/js/@APP_NAME.js" 
+    	src="/bower_components/requirejs/require.js"></script>
    	<!-- @endif -->
 
 	<!-- @if DEBUG=false -->
     <script type="text/javascript" 
-    	data-main="js/@APP_NAME.js?rel=@@timestamp" 
-    	src="bower_components/requirejs/require.js?rel=@@timestamp"></script>
+    	data-main="/js/@APP_NAME.js?rel=@@timestamp" 
+    	src="/bower_components/requirejs/require.js?rel=@@timestamp"></script>
    	<!-- @endif -->
 </body>
 </html>
